@@ -21,6 +21,7 @@ class TestReactive(unittest.TestCase):
         self.assertEqual(self.reactiveImpl1.age, 20)
         self.assertEqual(self.reactiveImpl1.name, "John")
         self.assertEqual(self.reactiveImpl2.address, "1234 lower residence road,Kelowna")
+        # not exist property should return None
         self.assertIsNone(self.reactiveImpl2.age)
 
     def test_setter(self):
