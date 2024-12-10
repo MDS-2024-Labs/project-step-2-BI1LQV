@@ -46,19 +46,14 @@ class TestWatchAttr(unittest.TestCase):
         self.WA2 = None
         self._executed_2 = False
     
-    def test_set_name_1(self):
+    def test_name(self):
         self.R1.name = "Mike"
         self.R3.name = "Steve"
         self.assertEqual(self._executed_1, True)
         self.assertEqual(self._executed_2, True)
 
-    def test_set_age_1(self):
-        self.R2.age = 25
-        self.R4.age = 30
-        self.assertEqual(self._executed_1, True)
-        self.assertEqual(self._executed_2, True)
-
-    def test_set_name_2(self):
+        self._executed_1 = False
+        self._executed_2 = False
         self.WA1.stop()
         self.WA2.stop()
         self.R1.name = "Jane"
@@ -66,7 +61,14 @@ class TestWatchAttr(unittest.TestCase):
         self.assertEqual(self._executed_1, False)
         self.assertEqual(self._executed_2, False)
 
-    def test_set_age_2(self):
+    def test_age(self):
+        self.R2.age = 25
+        self.R4.age = 30
+        self.assertEqual(self._executed_1, True)
+        self.assertEqual(self._executed_2, True)
+
+        self._executed_1 = False
+        self._executed_2 = False
         self.WA1.stop()
         self.WA2.stop()
         self.R2.age = 45
