@@ -9,15 +9,11 @@ def my_suite():
     suite = unittest.TestSuite()
     result = unittest.TestResult()
 
-    suite.addTest(TestReactive('test_getter_name'))
-    suite.addTest(TestReactive('test_setter_name'))
-    suite.addTest(TestReactive('test_getter_age'))
-    suite.addTest(TestReactive('test_setter_age'))
+    suite.addTest(TestReactive('test_getter'))
+    suite.addTest(TestReactive('test_setter'))
 
-    suite.addTest(TestComputed('test_getter_name'))
-    suite.addTest(TestComputed('test_setter_name'))
-    suite.addTest(TestComputed('test_getter_age'))
-    suite.addTest(TestComputed('test_setter_age'))
+    suite.addTest(TestComputed('test_getter'))
+    suite.addTest(TestComputed('test_setter'))
 
     suite.addTest(TestWatch('test_set_name_1'))
     suite.addTest(TestWatch('test_set_age_1'))

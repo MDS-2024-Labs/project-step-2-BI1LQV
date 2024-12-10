@@ -19,18 +19,18 @@ class TestComputed(unittest.TestCase):
         self.reactiveImpl1 = None
         self.reactiveImpl2 = None
         self.computedImpl1 = None
+        self.computedImpl2 = None
 
-    def test_getter_name(self):
+    def test_getter(self):
+        self.assertIsNone(self.computedImpl1.parent)
+        self.assertIsNone(self.computedImpl2.address)
         self.assertEqual(self.computedImpl1.value, "John Bell")
+        self.assertEqual(self.computedImpl2.value, 60)
     
-    def test_setter_name(self):
+    def test_setter(self):
         self.reactiveImpl1.name = "Yolo"
         self.assertEqual(self.reactiveImpl1.name, "Yolo")
         self.assertEqual(self.computedImpl1.value, "Yolo Bell")
-    
-    def test_getter_age(self):
-        self.assertEqual(self.computedImpl2.value, 60)
-    
-    def test_setter_age(self):
         self.reactiveImpl2.age = 21
+        self.assertEqual(self.reactiveImpl2.age, 21)
         self.assertEqual(self.computedImpl2.value, 41)
