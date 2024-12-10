@@ -41,33 +41,35 @@ class TestWatch(unittest.TestCase):
         self.W2 = None
         self._executed_2 = False
     
-    def test_set_name_1(self):
+    def test_name(self):
         self.R1.name = "Mike"
         self.R2.name = "Steve"
-        self.assertEqual(self._executed_1, True)
-        self.assertEqual(self._executed_2, True)
+        self.assertTrue(self._executed_1)
+        self.assertTrue(self._executed_2)
 
-    def test_set_age_1(self):
-        self.R1.age = 25
-        self.R2.age = 30
-        self.assertEqual(self._executed_1, True)
-        self.assertEqual(self._executed_2, True)
-
-    def test_set_name_2(self):
+        self._executed_1 = False
+        self._executed_2 = False
         self.W1.stop()
         self.W2.stop()
         self.R1.name = "Jane"
         self.R2.name = "Zeka"
-        self.assertEqual(self._executed_1, False)
-        self.assertEqual(self._executed_2, False)
+        self.assertFalse(self._executed_1)
+        self.assertFalse(self._executed_2)
 
-    def test_set_age_2(self):
+    def test_age(self):
+        self.R1.age = 25
+        self.R2.age = 30
+        self.assertTrue(self._executed_1)
+        self.assertTrue(self._executed_2)
+
+        self._executed_1 = False
+        self._executed_2 = False
         self.W1.stop()
         self.W2.stop()
         self.R1.age = 45
         self.R2.age = 60
-        self.assertEqual(self._executed_1, False)
-        self.assertEqual(self._executed_2, False)
+        self.assertFalse(self._executed_1)
+        self.assertFalse(self._executed_2)
 
 
 

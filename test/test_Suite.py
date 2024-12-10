@@ -19,15 +19,11 @@ def my_suite():
     suite.addTest(TestComputed('test_getter_age'))
     suite.addTest(TestComputed('test_setter_age'))
 
-    suite.addTest(TestWatch('test_set_name_1'))
-    suite.addTest(TestWatch('test_set_age_1'))
-    suite.addTest(TestWatch('test_set_name_2'))
-    suite.addTest(TestWatch('test_set_age_2'))
+    suite.addTest(TestWatch('test_name'))
+    suite.addTest(TestWatch('test_age'))
 
-    suite.addTest(TestWatchAttr('test_set_name_1'))
-    suite.addTest(TestWatchAttr('test_set_age_1'))
-    suite.addTest(TestWatchAttr('test_set_name_2'))
-    suite.addTest(TestWatchAttr('test_set_age_2'))
+    suite.addTest(TestWatchAttr('test_name'))
+    suite.addTest(TestWatchAttr('test_age'))
 
     runner = unittest.TextTestRunner()
     print(runner.run(suite))
